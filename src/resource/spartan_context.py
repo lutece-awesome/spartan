@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # coding=utf-8
+# from enum import Enum, unique
 
-# 该文件是存储传递上下文类的信息
-from enum import Enum, unique
-
-class DataType(Enum):
+class DataType():
     CPLUSPLUS = 0
     JAVA = 1
-    PYTHON = 2
-    GO = 3
+    PYTHON2 = 2
+    PYTHON3 = 3
+    GO = 4
     # print DataType.GO
 
 class Limit():
@@ -22,13 +21,19 @@ class InputType():
         return
 
 class Input:
-    def __init__(self):
-        self.data = '' # string
-        self.data_type = 0
+    def __init__(self, req):
+        self.data = req.get('Data') # string
+        self.data_type = req.get('DataType')
         self.limit = Limit()
-
+        self.input_type = req.get('InputType')
 
 
 class SpartanContext:
-    def __init__(self):
-        input = Input()
+    def __init__(self, req):
+        self.input = Input(req)
+
+    def show(self):
+        print self.input.data
+
+if __name__ == '__main__':
+    spartan_context = SpartanContext()
