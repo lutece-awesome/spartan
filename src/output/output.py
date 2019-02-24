@@ -9,6 +9,6 @@ class Output():
         # type: (List[str], spartan_context) -> dict
         # todo
         output = {
-            'status': 'judge ERROR'
+            'status': 'ERROR'
         }
         return output
