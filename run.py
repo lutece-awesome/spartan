@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+from typing import List
 from src.checker import checker
 from src.compiler import compiler
 from src.input import input
@@ -11,7 +12,7 @@ from src.resource import spartan_context
 
 
 class SpartanRunner():
-    def __init__(self):
+    def __init__(self): # type: () -> None
         self.Checker = checker.Checker()
         self.Compiler = compiler.Compiler()
         self.Input = input.Input()
@@ -21,9 +22,8 @@ class SpartanRunner():
         # self.SpartanContext = spartan_context.SpartanContext()
 
     def run(self, req):
-        # input
+        # type: (List[str], dict) -> dict
         context = self.Input.input(req) # 传入 req 返回 spartan_context
-        context.show()
 
         # check
         context = self.Checker.check(context)
@@ -38,23 +38,7 @@ class SpartanRunner():
         context = self.Runner.Run(context)
 
         # output
-        context = self.Output.output(context)
+        result = self.Output.output(context)
 
-        return context
+        return result
 
-    def test(self):
-        req = {
-            'Data':'print a + b',
-            'DataType': 2,
-            'Limitation':{
-                'time': 1000,
-                'memory': 1024
-            },
-            'InputType': 'Empty'
-        }
-        print self.run(req)
-
-
-if __name__ == '__main__':
-    Runner = SpartanRunner()
-    Runner.test()

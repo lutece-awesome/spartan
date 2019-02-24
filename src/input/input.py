@@ -9,10 +9,7 @@ class Input():
         return
 
     def input(self, req):
+        # type: (List[str], dict) -> spartan_context
         # todo
         context = spartan_context.SpartanContext(req)
         return context
-
-
-if __name__ == '__main__':
-    print 'todo'

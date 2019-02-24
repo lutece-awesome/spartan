@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
-# from enum import Enum, unique
+from enum import Enum, unique
 
-class DataType():
+@unique
+class DataType(Enum):
     CPLUSPLUS = 0
     JAVA = 1
     PYTHON2 = 2
@@ -33,7 +34,4 @@ class SpartanContext:
         self.input = Input(req)
 
     def show(self):
-        print self.input.data
-
-if __name__ == '__main__':
-    spartan_context = SpartanContext()
+        print(self.input.data)

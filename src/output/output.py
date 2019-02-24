@@ -6,12 +6,9 @@ class Output():
         return
 
     def output(self, spartan_context):
+        # type: (List[str], spartan_context) -> dict
         # todo
         output = {
             'status': 'judge ERROR'
         }
         return output
-
-
-if __name__ == '__main__':
-    print 'todo'
