@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
-import sys
 from ..resource import spartan_context
 
 
-class Input():
+class Input:
     def __init__(self):
         return
 

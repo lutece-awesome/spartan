@@ -2,18 +2,18 @@
 # coding=utf-8
 
 import time
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import urllib
-import json
-import base64
-import run
 
+import urllib
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+import run
 from src.conf.conf import *
 
 HOST_NAME = HOST
 PORT_NUMBER = PORT
 
 CONIFRM_PATH = './log'
+
 
 class HttpHandler(BaseHTTPRequestHandler):
     def _set_headers(self):
@@ -33,7 +33,7 @@ class HttpHandler(BaseHTTPRequestHandler):
             retVal['RetCode'] = 200
         except:
             retVal['RetCode'] = 0
-        return jsonn.dumps(retVal)
+        return json.dumps(retVal)
 
     def do_HEAD(self):
         self._set_headers()
@@ -50,6 +50,7 @@ class HttpHandler(BaseHTTPRequestHandler):
         post_data = urllib.unquote(post_data).decode("utf-8", 'ignore')
         retStr = self._post_handler(post_data)
         self.wfile.write(retStr)
+
 
 if __name__ == '__main__':
     server_class = HTTPServer

@@ -2,43 +2,44 @@
 # coding=utf-8
 
 from typing import List
+
 from src.checker import checker
 from src.compiler import compiler
 from src.input import input
 from src.output import output
 from src.runner import runner
 from src.scheduler import scheduler
-from src.resource import spartan_context
 
 
-class SpartanRunner():
-    def __init__(self): # type: () -> None
-        self.Checker = checker.Checker()
-        self.Compiler = compiler.Compiler()
-        self.Input = input.Input()
-        self.Output = output.Output()
-        self.Runner = runner.Runner()
-        self.Scheduler = scheduler.Scheduler()
+class SpartanRunner:
+
+    def __init__(self) -> None:
+        self.checker = checker.Checker()
+        self.compiler = compiler.Compiler()
+        self.input = input.Input()
+        self.output = output.Output()
+        self.runner = runner.Runner()
+        self.scheduler = scheduler.Scheduler()
         # self.SpartanContext = spartan_context.SpartanContext()
 
     def run(self, req):
         # type: (List[str], dict) -> dict
-        context = self.Input.input(req) # 传入 req 返回 spartan_context
+        context = self.input.input(req) # 传入 req 返回 spartan_context
 
         # check
-        context = self.Checker.check(context)
+        context = self.checker.check(context)
 
         # compiler
-        context = self.Compiler.compile(context)
+        context = self.compiler.compile(context)
 
         # scheduler
-        context = self.Scheduler.schedule(context)
+        context = self.scheduler.schedule(context)
 
         # runner
-        context = self.Runner.Run(context)
+        context = self.runner.Run(context)
 
         # output
-        result = self.Output.output(context)
+        result = self.output.output(context)
 
         return result
 

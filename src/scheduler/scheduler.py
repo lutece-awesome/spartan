@@ -2,6 +2,7 @@
 # coding=utf-8
 from typing import List
 
+
 class Scheduler():
     def __init__(self):
         return
@@ -10,4 +11,3 @@ class Scheduler():
         # type: (List[str], spartan_context) -> spartan_context
         # todo
         return spartan_context
-

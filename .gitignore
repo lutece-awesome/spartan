@@ -2,3 +2,6 @@
 nohup.out
 *.log
 .idea
+venv
+.vscode
+.idea
