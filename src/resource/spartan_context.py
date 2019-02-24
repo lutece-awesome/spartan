@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # coding=utf-8
 from enum import Enum, unique
+import ConfigParser
+cf = ConfigParser.ConfigParser()
 
+cf.read('../conf/spartan.config')
 @unique
 class DataType(Enum):
     CPLUSPLUS = 0
@@ -9,10 +12,11 @@ class DataType(Enum):
     PYTHON2 = 2
     PYTHON3 = 3
     GO = 4
-    # print DataType.GO
 
 class Limit():
-    def __init__(self, time_limit = 1000, memory_limit = 1024, cpu_num = 1):
+    def __init__(self, time_limit = cf.get('default', 'DEFAULT_TIMELIMIT'),
+                    memory_limit = cf.get('default', 'DEFAULT_MEMORYLIMIT'),
+                    cpu_num = cf.get('default', 'DEFAULT_CPUNUM')):
         self.TimeLimit = time_limit
         self.MemoryLimit = memory_limit
         self.CpuNum = cpu_num
