@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-TAG='斯巴达是真的牛逼'
+# BASE
+HOST = '127.0.0.1'
+PORT = 7777
 
-
-
+# DEFAULT
+DEFAULT_TIMELIMIT = 1000
+DEFAULT_MEMORYLIMIT = 1024
+DEFAULT_CPUNUM = 1
