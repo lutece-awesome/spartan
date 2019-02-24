@@ -38,7 +38,7 @@ class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         json_data = self._json_encode(data)
         file_name = json_data['FileName']
         file_data = base64.b64decode(json_data['FileData'])
-        file_path = "%s/%s"% (CONIFRM_PATH, file_name)
+        file_path = f'{CONIFRM_PATH}/{file_name}'
         fd = open(file_path, 'w')
         fd.write(file_data)
         fd.close()
@@ -64,10 +64,10 @@ class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 if __name__ == '__main__':
     server_class = BaseHTTPServer.HTTPServer
     httpd = server_class((HOST_NAME, PORT_NUMBER), HttpHandler)
-    print time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER)
+    print(time.asctime(), f'Server Starts - {HOST_NAME}:{PORT_NUMBER}')
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
         pass
     httpd.server_close()
-    print time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER)
+    print(time.asctime(), f'Server Stops - {HOST_NAME}:{PORT_NUMBER}')
