@@ -6,5 +6,6 @@ class Runner():
         return
 
     def Run(self, spartan_context):
+        # type: (List[str], spartan_context) -> spartan_context
         # todo
         return spartan_context
