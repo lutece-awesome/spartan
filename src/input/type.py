@@ -37,7 +37,7 @@ class DataType(Enum):
         elif value == 'file':
             return cls.FILE
         else:
-            raise TypeError(f'Unknown checker type with <{value}>')
+            raise TypeError(f'Unknown data type with <{value}>')
 
 
 # For the default testlib checker, please ref to https://github.com/MikeMirzayanov/testlib/tree/master/checkers
