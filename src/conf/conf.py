@@ -5,10 +5,11 @@
 HOST = '127.0.0.1'
 PORT = 7777
 
-# DEFAULT
-DEFAULT_TIMELIMIT = 1000
-DEFAULT_MEMORYLIMIT = 1024
-DEFAULT_CPUNUM = 1
+# The default data
+DEFAULT_DATA = ''
+
+# The default data type
+DEFAULT_DATA_TYPE = 'file'
 
 # The default time limit, with milliseconds
 DEFAULT_TIME_LIMIT = 1000
@@ -33,3 +34,9 @@ DEFAULT_CHECKER_TIME_LIMIT = 2000
 
 # The default checker memory limit, with megabytes
 DEFAULT_CHECKER_MEMORY_LIMIT = 64
+
+# The default checker type
+DEFAULT_CHECKER_TYPE = 'wcmp'
+
+# The default checker data
+DEFAULT_CHECKER_DATA = ''

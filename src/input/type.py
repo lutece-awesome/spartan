@@ -1,5 +1,6 @@
 from enum import Enum, unique
 
+from ..conf.conf import *
 
 @unique
 class DataType(Enum):
@@ -23,23 +24,32 @@ class CheckerType(Enum):
 
 
 class RunningData:
-    data: str
-    data_type: DataType
-    time_limit: int
-    memory_limit: int
-    cpu_number_limit: int
-    output_limit: int
-    compile_time_limit: int
-    compile_memory_limit: int
-    checker_time_limit: int
-    checker_memory_limit: int
-    checker_type: CheckerType
-    checker_data: str
+    # data: str
+    # data_type: DataType
+    # time_limit: int
+    # memory_limit: int
+    # cpu_number_limit: int
+    # output_limit: int
+    # compile_time_limit: int
+    # compile_memory_limit: int
+    # checker_time_limit: int
+    # checker_memory_limit: int
+    # checker_type: CheckerType
+    # checker_data: str
 
-    def __init__(self, data: str, data_type: DataType, time_limit: int, memory_limit: int, cpu_number_limit: int,
-                 output_limit: int, compile_time_limit: int, compile_memory_limit: int, checker_time_limit: int,
-                 checker_memory_limit: int, checker_type: CheckerType,
-                 checker_data: str) -> None:
+    def __init__(self,
+                 data: str = DEFAULT_DATA,
+                 data_type: DataType = DEFAULT_DATA_TYPE,
+                 time_limit: int = DEFAULT_TIME_LIMIT,
+                 memory_limit: int = DEFAULT_MEMORY_LIMIT,
+                 cpu_number_limit: int = DEFAULT_CPU_NUMBER_LIMIT,
+                 output_limit: int = DEFAULT_OUTPUT_LIMIT,
+                 compile_time_limit: int = DEFAULT_COMPILE_TIME_LIMIT,
+                 compile_memory_limit: int = DEFAULT_COMPILE_MEMORY_LIMIT,
+                 checker_time_limit: int = DEFAULT_CHECKER_TIME_LIMIT,
+                 checker_memory_limit: int = DEFAULT_CHECKER_MEMORY_LIMIT,
+                 checker_type: CheckerType = DEFAULT_CHECKER_TYPE,
+                 checker_data: str = DEFAULT_CHECKER_DATA) -> None:
         self.data = data
         self.data_type = data_type
         self.time_limit = time_limit

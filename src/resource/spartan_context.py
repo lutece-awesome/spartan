@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # coding=utf-8
+# 此文件 废弃
 from enum import Enum, unique
-from typing import List
-
+import configparser
 from ..conf.conf import *
-
+from typing import List
 
 @unique
 class DataType(Enum):
@@ -14,27 +14,24 @@ class DataType(Enum):
     PYTHON3 = 3
     GO = 4
 
-
-class Limit:
-    def __init__(self, time_limit=DEFAULT_TIMELIMIT,
-                 memory_limit=DEFAULT_MEMORYLIMIT,
-                 cpu_num=DEFAULT_CPUNUM):
+class Limit():
+    def __init__(self, time_limit = DEFAULT_TIME_LIMIT,
+                    memory_limit = DEFAULT_MEMORY_LIMIT,
+                    cpu_num = DEFAULT_CPU_NUMBER_LIMIT):
         # type: (List(str), dict) -> None
         self.TimeLimit = time_limit
         self.MemoryLimit = memory_limit
         self.CpuNum = cpu_num
-
 
 class InputType():
     def __init__(self):
         # type: (List(str), dict) -> None
         return
 
-
 class Input:
     def __init__(self, req):
         # type: (List(str), dict) -> None
-        self.data = req.get('Data')  # string
+        self.data = req.get('Data') # string
         self.data_type = req.get('DataType')
         self.limit = Limit()
         self.input_type = req.get('InputType')
