@@ -1,8 +1,10 @@
-from abc import ABC, abstractmethod
 import json
+from abc import ABC, abstractmethod
 
+from src.conf.config import DEFAULT_DATA, DEFAULT_DATA_TYPE, DEFAULT_TIME_LIMIT, DEFAULT_CPU_NUMBER_LIMIT, \
+    DEFAULT_OUTPUT_LIMIT, DEFAULT_COMPILE_TIME_LIMIT, DEFAULT_COMPILE_MEMORY_LIMIT, DEFAULT_CHECKER_TIME_LIMIT, \
+    DEFAULT_CHECKER_MEMORY_LIMIT, DEFAULT_CHECKER_TYPE, DEFAULT_CHECKER_DATA
 from .type import RunningData
-from ..conf.conf import *
 
 
 class DataParser(ABC):

@@ -2,6 +2,7 @@ from enum import Enum, unique
 
 from ..conf.conf import *
 
+
 @unique
 class DataType(Enum):
     C = 0

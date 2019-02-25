@@ -2,6 +2,7 @@
 # coding=utf-8
 from .parser import JsonDataParser
 
+
 class Input:
     def __init__(self):
         self.json_data_parser = JsonDataParser()
