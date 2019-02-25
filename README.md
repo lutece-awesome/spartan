@@ -1,7 +1,7 @@
 # Spartan
 
 [![Python](https://img.shields.io/badge/python-3.7.2-red.svg?style=flat-square)](https://www.python.org/downloads/release/python-370/)
-[![Build Status](https://travis-ci.com/lutece-awesome/spartan.svg?branch=master)](https://travis-ci.com/lutece-awesome/spartan)
+[![Build Status](https://travis-ci.org/lutece-awesome/spartan.svg?branch=master)](https://travis-ci.org/lutece-awesome/spartan)
 [![Coverage Status](https://coveralls.io/repos/github/lutece-awesome/spartan/badge.svg?branch=master)](https://coveralls.io/github/lutece-awesome/spartan?branch=master)
 
 Next generation core.
