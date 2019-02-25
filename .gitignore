@@ -5,3 +5,4 @@ nohup.out
 venv
 .vscode
 .idea
+.coverage
