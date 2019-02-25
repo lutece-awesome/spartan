@@ -24,22 +24,22 @@ class SpartanRunner:
 
     def run(self, req):
         # type: (List[str], dict) -> dict
-        context = self.input.input(req) # 传入 req 返回 spartan_context
+        RunningData = self.input.input(req) # 传入 req 返回 spartan_context
 
         # check
-        context = self.checker.check(context)
+        RunningData = self.checker.check(RunningData)
 
         # compiler
-        context = self.compiler.compile(context)
+        RunningData = self.compiler.compile(RunningData)
 
         # scheduler
-        context = self.scheduler.schedule(context)
+        RunningData = self.scheduler.schedule(RunningData)
 
         # runner
-        context = self.runner.Run(context)
+        RunningData = self.runner.Run(RunningData)
 
         # output
-        result = self.output.output(context)
+        result = self.output.output(RunningData)
 
         return result
 

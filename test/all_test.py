@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 import unittest
-import sys
+import sys, json
 sys.path.append('..')
 import run
 
@@ -17,6 +17,7 @@ class TestDict(unittest.TestCase):
             },
             'InputType': 'Empty'
         }
+        req = json.dumps(req)
         status = Runner.run(req)
         self.assertEqual(status['status'], 'ERROR')
 

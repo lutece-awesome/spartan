@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding=utf-8
-from ..resource import spartan_context
-
+from .parser import JsonDataParser
 
 class Input:
     def __init__(self):
+        self.json_data_parser = JsonDataParser()
         return
 
     def input(self, req):
-        # type: (List[str], dict) -> spartan_context
+        # type: (List[str], str) -> RunningData
         # todo
-        context = spartan_context.SpartanContext(req)
-        return context
+        running_data = self.json_data_parser.parse(req)
+        return running_data
