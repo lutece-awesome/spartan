@@ -3,7 +3,7 @@
 from typing import List
 
 
-class Scheduler():
+class Scheduler:
     def __init__(self):
         return
 

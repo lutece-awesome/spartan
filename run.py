@@ -9,23 +9,30 @@ from src.input import input
 from src.output import output
 from src.runner import runner
 from src.scheduler import scheduler
-from util.Singleton import *
+from util.decorators import singleton
 
-@Singleton
+
+@singleton
 class SpartanRunner:
+    scheduler: scheduler.Scheduler
+    input: input.Input
+    compiler: compiler.Compiler
+    runner: runner.Runner
+    checker = checker.Checker
+    output: output.Output
 
-    def __init__(self) -> None:
-        self.checker = checker.Checker()
-        self.compiler = compiler.Compiler()
-        self.input = input.Input()
-        self.output = output.Output()
-        self.runner = runner.Runner()
+    def __init__(self, is_debug=False) -> None:
         self.scheduler = scheduler.Scheduler()
+        self.input = input.Input()
+        self.compiler = compiler.Compiler()
+        self.runner = runner.Runner()
+        self.checker = checker.Checker()
+        self.output = output.Output()
         # self.SpartanContext = spartan_context.SpartanContext()
 
     def run(self, req):
         # type: (List[str], str) -> str
-        RunningData = self.input.input(req) # 传入 req 返回 spartan_context
+        RunningData = self.input.input(req)  # 传入 req 返回 spartan_context
 
         # check
         RunningData = self.checker.check(RunningData)
@@ -43,7 +50,3 @@ class SpartanRunner:
         result = self.output.output(RunningData)
 
         return result
-
-
-
-

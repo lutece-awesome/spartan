@@ -25,8 +25,8 @@ Next generation core.
 | compile_memory_limit | int | 64 | 编译内存限制,单位mb
 | checker_time_limit | int | 2000 | 检查器时间限制,单位ms
 | checker_memory_limit | int | 64 | 检查器内存限制,单位mb
-| checker_type | str | "wcmp" | 检查器种类,可选'wcmp' \| 'custom',wcmp是testlib自带的checker,具体参考[这里](https://github.com/MikeMirzayanov/testlib/tree/master/checkers)
-| checker_data | str | "" | 自定义检查器脚本内容,仅支持c++语言,模板参考(TODO)
+| checker_type | str | "wcmp" | 检查器种类,可选"wcmp" \| "custom",wcmp是testlib自带的checker,具体参考[这里](https://github.com/MikeMirzayanov/testlib/tree/master/checkers)
+| checker_data | str | "" | 自定义检查器脚本内容,仅在checker_type为"custom"时生效,仅支持c++语言,模板参考(TODO)
 
 # 过程变量
 
