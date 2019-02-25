@@ -9,8 +9,9 @@ from src.input import input
 from src.output import output
 from src.runner import runner
 from src.scheduler import scheduler
+from util.Singleton import *
 
-
+@Singleton
 class SpartanRunner:
 
     def __init__(self) -> None:
@@ -23,7 +24,7 @@ class SpartanRunner:
         # self.SpartanContext = spartan_context.SpartanContext()
 
     def run(self, req):
-        # type: (List[str], dict) -> dict
+        # type: (List[str], str) -> str
         RunningData = self.input.input(req) # 传入 req 返回 spartan_context
 
         # check
@@ -42,4 +43,7 @@ class SpartanRunner:
         result = self.output.output(RunningData)
 
         return result
+
+
+
 

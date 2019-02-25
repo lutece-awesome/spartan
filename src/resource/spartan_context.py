@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+# 此文件 废弃
 from enum import Enum, unique
 import configparser
 from ..conf.conf import *
