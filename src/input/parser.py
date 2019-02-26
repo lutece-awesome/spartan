@@ -22,9 +22,12 @@ class JsonDataParser(DataParser):
         running_data_json = json.loads(input_data)
         setting = self.setting
         running_data = RunningData.parse(data=running_data_json.get('data', setting.DEFAULT_DATA),
-                                         data_type=running_data_json.get('data_type', setting.DEFAULT_DATA_TYPE),
-                                         time_limit=running_data_json.get('time_limit', setting.DEFAULT_TIME_LIMIT),
-                                         memory_limit=running_data_json.get('memory_limit', setting.DEFAULT_MEMORY_LIMIT),
+                                         data_type=running_data_json.get(
+                                             'data_type', setting.DEFAULT_DATA_TYPE),
+                                         time_limit=running_data_json.get(
+                                             'time_limit', setting.DEFAULT_TIME_LIMIT),
+                                         memory_limit=running_data_json.get(
+                                             'memory_limit', setting.DEFAULT_MEMORY_LIMIT),
                                          cpu_number_limit=running_data_json.get('cpu_number_limit',
                                                                                 setting.DEFAULT_CPU_NUMBER_LIMIT),
                                          output_limit=running_data_json.get('output_limit',

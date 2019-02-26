@@ -16,7 +16,8 @@ class Input:
         elif data_parser_type == 'proto':
             self._data_parser = ProtoDataParser(setting=setting)
         else:
-            raise TypeError(f'Unknown data parser type with <{data_parser_type}>')
+            raise TypeError(
+                f'Unknown data parser type with <{data_parser_type}>')
 
     def parse_data(self, input_str: str) -> RunningData:
         return self._data_parser.parse(input_str)

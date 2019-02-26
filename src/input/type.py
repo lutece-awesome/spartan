@@ -107,14 +107,14 @@ class RunningData:
 
     def __eq__(self, other):
         return self.data == other.data \
-               and self.data_type == other.data_type \
-               and self.time_limit == other.time_limit \
-               and self.memory_limit == other.memory_limit \
-               and self.cpu_number_limit == other.cpu_number_limit \
-               and self.output_limit == other.output_limit \
-               and self.compile_time_limit == other.compile_time_limit \
-               and self.compile_memory_limit == other.compile_memory_limit \
-               and self.checker_time_limit == other.checker_time_limit \
-               and self.checker_memory_limit == other.checker_memory_limit \
-               and self.checker_type == other.checker_type \
-               and self.checker_data == other.checker_data
+            and self.data_type == other.data_type \
+            and self.time_limit == other.time_limit \
+            and self.memory_limit == other.memory_limit \
+            and self.cpu_number_limit == other.cpu_number_limit \
+            and self.output_limit == other.output_limit \
+            and self.compile_time_limit == other.compile_time_limit \
+            and self.compile_memory_limit == other.compile_memory_limit \
+            and self.checker_time_limit == other.checker_time_limit \
+            and self.checker_memory_limit == other.checker_memory_limit \
+            and self.checker_type == other.checker_type \
+            and self.checker_data == other.checker_data
