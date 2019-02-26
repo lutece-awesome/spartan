@@ -1,7 +1,7 @@
 import unittest
 
 from src.conf.config import Setting
-from src.input.input import Input
+from src.input.module import Input
 from src.input.type import RunningData, DataType, CheckerType
 
 
