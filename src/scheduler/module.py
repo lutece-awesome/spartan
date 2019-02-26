@@ -37,7 +37,6 @@ class Scheduler:
             self._schedule_job()
 
     def _schedule_job(self):
-        print(self._max_job_number)
         if self._max_job_number == 0:
             print('No enough resources, suspend request.')
             return
@@ -47,10 +46,6 @@ class Scheduler:
         input_str = self._event_que[0]
         self._event_que.pop(0)
         self._event_loop.create_task(self._run_job(input_str))
-
-    def _trigger_schedule(self):
-        # TODO(hezhu): improve the policy
-        pass
 
     def _warm_shutdown(self):
         # TODO(hezhu): wait all taks complete and close it, impl it
