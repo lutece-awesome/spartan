@@ -5,7 +5,7 @@ import random
 from typing import IO
 
 from src.conf.config import Setting
-from src.input.input import Input
+from src.input.module import Input
 from util.decorators import singleton
 
 

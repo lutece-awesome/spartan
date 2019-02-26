@@ -1,7 +1,7 @@
 import sys
 
 from src.conf.config import Setting
-from src.scheduler.scheduler import Scheduler
+from src.scheduler.module import Scheduler
 
 scheduler = Scheduler(setting=Setting)
 
