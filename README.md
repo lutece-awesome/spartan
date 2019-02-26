@@ -6,6 +6,10 @@
 
 Next generation core.
 
+# 架构图
+
+![image](https://github.com/lutece-awesome/spartan/blob/master/docs/pic/pic1.png)
+
 # 属性
 
 - 更强的安全性 & 性能沙箱
